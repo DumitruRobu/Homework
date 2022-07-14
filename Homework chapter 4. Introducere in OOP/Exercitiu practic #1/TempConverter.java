@@ -1,7 +1,7 @@
 public class TempConverter 
 {
-	public static int celsius;
-	public static int fahr;
+	public int celsius;
+	public int fahr;
 	public static float result;
 
 	public static void convertToCelsius(float fahr)
