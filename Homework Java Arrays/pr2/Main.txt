@@ -1,0 +1,11 @@
+package com.Application;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        StarArray sir1 = new StarArray();
+        sir1.showArray();
+    }
+}
+

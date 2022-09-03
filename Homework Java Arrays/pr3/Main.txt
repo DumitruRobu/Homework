@@ -1,0 +1,20 @@
+package com.Application;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+//Sa se creeze o clasa care inițializează un array cu 5 numere, roagă utilizatorul să introduca un număr
+// apoi raspunde la intrebarea daca acest numar există in array sau nu.
+        Scanner Nume_Scaner = new Scanner(System.in);
+        System.out.println("Introdu cifra ta: ");
+        int a = Nume_Scaner.nextInt();
+
+        FiveElementsArray sir1 = new FiveElementsArray();
+        sir1.showArray();
+        sir1.findElement(a);
+
+    }
+}
+

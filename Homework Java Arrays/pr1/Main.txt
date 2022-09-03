@@ -1,0 +1,15 @@
+//De scris o clasă SumArray care declară și inițializează un array
+// cu primele X elemente și calculează suma numerelor.
+
+package com.Application;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        SumArray sir1 = new SumArray(10);
+        sir1.showSuma();
+        sir1.showArray();
+    }
+}
+

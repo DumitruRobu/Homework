@@ -1,0 +1,32 @@
+package com.Application;
+
+public class SumArray {
+
+    private int [] sir = new int [100];
+    private int suma = 0;
+    private int nrEl = 0;
+
+    public SumArray(int nrElemente)
+    {
+        this.nrEl = nrElemente;
+        for (int i=0; i<nrElemente; i++)
+        {
+            this.sir[i]=i;
+            this.suma+=i;
+        }
+    }
+
+    public void showSuma()
+    {
+        System.out.println("Suma vectorului = " + this.suma);
+    }
+
+    public void showArray()
+    {
+        System.out.println("Vectorul tau este:");
+        for (int i=0; i<this.nrEl; i++)
+        {
+            System.out.printf("%s ",this.sir[i], " ");
+        }
+    }
+}

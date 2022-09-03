@@ -1,0 +1,30 @@
+package com.Application;
+import java.util.Random;
+
+public class HundredElements {
+    private char [] sir = new char[100];
+    private int min = 33;
+    private Random random = new Random();
+
+    public HundredElements()
+    {
+        for (int i=0; i<100; i++)
+        {
+            sir[i]= (char) this.min;
+            this.min+=( i ) ;
+            if (this.min > 126)
+            {
+                this.min=33;
+            }
+        }
+    }
+
+    public void showArray ()
+    {
+        for (int i=0; i<100; i++)
+        {
+            System.out.printf(sir[i]+" ");
+        }
+    }
+
+}

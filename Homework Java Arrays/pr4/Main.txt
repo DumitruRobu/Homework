@@ -1,0 +1,13 @@
+package com.Application;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+ //De scris o clasă care inițializează 100 de caractere și le afișează la ecran.
+
+        HundredElements sir1 = new HundredElements();
+        sir1.showArray();
+    }
+}
+
