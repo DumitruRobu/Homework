@@ -52,14 +52,41 @@ public class Main {
                     }
 
                 case "2": System.out.println("A-ti ales Afisare!");
-                    if (nr >0)
-                    {
-                        for (int i=0; i<nr; i++)
-                        {
-                            System.out.println(i+1+". Nume: " + Angajati[i].getName());
-                            System.out.println("Prenume: " + Angajati[i].getSurname());
-                            System.out.println("Profesia: " + Angajati[i].getTitle());
-                            System.out.println(" ");
+                    if (nr >0) {
+                        System.out.println("Pentru a vizualiza toti angajatii apasa '1'");
+                        System.out.println("Pentru a vizualiza un angajat specific apasa '2'");
+
+                        Scanner Raspuns = new Scanner(System.in);
+                        switch (Raspuns.nextLine()) {
+                            case "1":
+                                for (int i = 0; i < nr; i++) {
+                                    System.out.println(i + 1 + "Nume: " + Angajati[i].getName());
+                                    System.out.println("Prenume: " + Angajati[i].getSurname());
+                                    System.out.println("Profesia: " + Angajati[i].getTitle());
+                                    System.out.println(" ");
+
+                                }
+                                break;
+                            case "2":
+                                try{
+                                    System.out.println("Indica ID-ul (Numarul angajatului pe care doresti sa il afisezi: ");
+                                    int ID_Dorit = Raspuns.nextInt()-1;
+                                    System.out.println(". Nume: " + Angajati[ID_Dorit].getName());
+                                    System.out.println("Prenume: " + Angajati[ID_Dorit].getSurname());
+                                    System.out.println("Profesia: " + Angajati[ID_Dorit].getTitle());
+                                    System.out.println(" ");
+                                    break;
+                                }
+                               catch(ArrayIndexOutOfBoundsException ex)
+                               {
+                                   System.out.println("Nu exista angajat cu asemenea ID!");
+                               }
+                                catch(Exception e)
+                            {
+                                System.out.println("Introduceti va rog caractere numerice!");
+                            }
+                            default:
+                                System.out.println("Optiunea aleasa este indisponibila!");
                         }
                     }
                     else
