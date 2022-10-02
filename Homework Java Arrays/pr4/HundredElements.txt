@@ -3,16 +3,16 @@ import java.util.Random;
 
 public class HundredElements {
     private char [] sir = new char[100];
-    private int min = 33;
-    private Random random = new Random();
+    private char min = 33;
 
     public HundredElements()
     {
         for (int i=0; i<100; i++)
         {
-            sir[i]= (char) this.min;
-            this.min+=( i ) ;
-            if (this.min > 126)
+            sir[i]= this.min;
+            this.min+= 1;
+            //this.min+=i;
+            if (this.min >= 126)
             {
                 this.min=33;
             }
@@ -23,8 +23,12 @@ public class HundredElements {
     {
         for (int i=0; i<100; i++)
         {
-            System.out.printf(sir[i]+" ");
+            System.out.print(sir[i]+" ");
         }
     }
 
+//    public static void main(String[] args) {
+//        double x = 5.3333333333333333333;
+//        System.out.printf("%.2f test", x);
+//    }
 }
