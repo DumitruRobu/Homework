@@ -1,0 +1,58 @@
+package com.Application;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+    int contorAlf = 0;
+    List <String> Alfabet = new ArrayList<>();
+    boolean flag1 = true;
+
+    while(flag1)
+    {
+        System.out.println("***MENU***");
+        System.out.println("1.Enter new angajat!");
+        System.out.println("2.Vizualizeaza angajati!");
+        System.out.println("0. Exit!");
+
+        Scanner sc = new Scanner(System.in);
+        String a = sc.nextLine();
+        switch(a)
+        {
+            case ("0"):
+                flag1=false;
+                break;
+            case ("1"):
+                System.out.println("Ai introdus 1. Inregistram un nou angajat!");
+                System.out.println("Introdu numele: ");
+                String nume = sc.nextLine();
+
+                System.out.println("Introdu prenumele: ");
+                String prenume = sc.nextLine();
+
+                System.out.println("Introdu genul: ");
+                String gen = sc.nextLine();
+
+                System.out.println("Angajatul \""+nume+" "+prenume+", "+gen+"\" a fost inregistrat!");
+                Alfabet.add(nume +" "+prenume +", "+ gen);
+                contorAlf++;
+                break;
+            case ("2"):
+                System.out.println("Ai introdus 2. Vizualizam angajatii inregistrati!");
+                for (int i=0; i<contorAlf; i++)
+                {
+                    System.out.println(Alfabet.get(i));
+                }
+                break;
+        }
+    }
+
+    }
+}
+
+
+
+
+

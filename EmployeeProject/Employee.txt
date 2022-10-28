@@ -1,0 +1,133 @@
+package com.Application;
+import java.util.Scanner;
+
+public class Employee {
+    String name;
+    String surname;
+    String gen;
+    static int contor=0;
+    static String[] SirAngajat;
+    static boolean flagNrAng=true;
+    static int n = 0;
+
+    public static void setNrEmployees()
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Indica nr total al angajatilor: ");
+        n = sc.nextInt();
+        SirAngajat = new String[n];
+        flagNrAng=false;
+    }
+
+    public static void setEmployee()
+    {
+        if (n>contor)
+        {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Indica numele angajatului: ");
+            String n = sc.nextLine();
+
+            System.out.println("Indica prenumele angajatului: ");
+            String p = sc.nextLine();
+
+            System.out.println("Indica genul angajatului(M/F): ");
+            String g = sc.nextLine();
+
+            SirAngajat[contor] = (n+" "+p+", "+g);
+
+            System.out.println("Angajatul "+ SirAngajat[contor]+" a fost inregistrat cu succes!");
+            ++contor;
+        }
+        else
+        {
+            System.out.println("Limita angajatilor inregistrati a fost atinsa!");
+        }
+    }
+
+    public static void getEmployee()
+    {
+        if(!Employee.flagNrAng) {
+            System.out.println("Pentru a vizualiza toti angajatii apasa '1'");
+            System.out.println("Pentru a vizualiza un angajat specific apasa '2'");
+
+            Scanner Raspuns = new Scanner(System.in);
+            switch (Raspuns.nextLine()) {
+                case "1":
+                    System.out.println("Lista angajatilor este: ");
+                    for (int i = 0; i < contor; i++)
+                        System.out.println(i + 1 + ". " + SirAngajat[i]);
+                        break;
+                case "2":
+                    try {
+                        System.out.println("Indica ID-ul (Numarul angajatului pe care doresti sa il afisezi: ");
+                        int ID_Dorit = Raspuns.nextInt() - 1;
+                        System.out.println(SirAngajat[ID_Dorit]);
+                        System.out.println(" ");
+                        break;
+                    } catch (ArrayIndexOutOfBoundsException ex) {
+                        System.out.println("Nu exista angajat cu asemenea ID!"); break;
+                    } catch (Exception e) {
+                        System.out.println("Introduceti va rog caractere numerice!"); break;
+                    }
+                default:
+                    System.out.println("Optiunea aleasa este indisponibila!");
+            }
+        }
+        else { System.out.println("Nu sunt angajati de afisat!");}
+
+    }
+
+    public static void editEmployee()
+    {
+        if(!Employee.flagNrAng)
+        {
+            System.out.println("Indica ID-ul(Nr) angajatului care doresti sal editezi: ");
+            Scanner sc = new Scanner(System.in);
+            int ID = sc.nextInt() - 1;
+            String rest = sc.nextLine();
+
+            if (ID < contor) {
+                System.out.println("Indica noul nume al angajatului: ");
+                String n = sc.nextLine();
+
+                System.out.println("Indica noul prenume al angajatului: ");
+                String p = sc.nextLine();
+
+                System.out.println("Indica noul gen al angajatului(M/F): ");
+                String g = sc.nextLine();
+
+                SirAngajat[ID] = (n + " " + p + ", " + g);
+
+                System.out.println("Angajatul " + SirAngajat[ID] + " a fost modificat cu succes!");
+            } else {
+                System.out.println("Invalid ID!");
+            }
+        }
+        else { System.out.println("Nu sunt angajati de edidat!");}
+    }
+
+    public static void deleteEmployee()
+    {
+        if (contor > 1)
+        {
+            System.out.println("Introdu ID-ul (numarul) angajatului care doresti sa il stergi: ");
+            Scanner sc = new Scanner(System.in);
+            int ID = sc.nextInt()-1;
+            String rest = sc.nextLine();
+
+            if(ID<contor)
+            {
+                for (;ID<contor-1; ID++) //sau i<nr-1
+                {
+                    SirAngajat[ID]=SirAngajat[ID+1];
+                }
+                SirAngajat[contor-1]=("");
+            }
+            else{
+                System.out.println("Invalid ID!");
+            }
+        }
+
+        else{System.out.println("Introdu cel putin 2 angajati!");}
+    }
+ }
