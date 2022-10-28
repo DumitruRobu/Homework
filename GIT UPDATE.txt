@@ -1,0 +1,4 @@
+1)	git add .
+2)	git commit -m "uploading my homework to github"
+3)	Afli pe ce branch esti, (de dorit sa fie main) via comand git branch
+4)	Daca esti pe main: git push origin main
