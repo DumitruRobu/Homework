@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="355.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="it.step.controller.MainSceneController">
+<children>
+    <Button layoutX="517.0" layoutY="89.0" mnemonicParsing="false" onAction="#onAdd" prefHeight="26.0" prefWidth="146.0" text="Add employee" AnchorPane.rightAnchor="16.599999999999994">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/add-user.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+    <Button layoutX="517.0" layoutY="163.0" mnemonicParsing="false" onAction="#onDelete" prefHeight="26.0" prefWidth="146.0" text="Delete employee" AnchorPane.rightAnchor="16.599999999999994">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/delete-user.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+    <Button layoutX="517.0" layoutY="128.0" mnemonicParsing="false" onAction="#onEdit" prefHeight="26.0" prefWidth="146.0" text="Edit employee" AnchorPane.rightAnchor="16.599999999999994">
+         <graphic>
+            <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/edit.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+    <TableView fx:id="table" layoutX="7.0" layoutY="36.0" prefHeight="288.0" prefWidth="501.0" AnchorPane.leftAnchor="7.0" AnchorPane.rightAnchor="172.0">
+        <columns>
+            <TableColumn fx:id="idCol" prefWidth="50.39999198913574" text="ID" />
+            <TableColumn fx:id="numeCol" prefWidth="93.60001373291016" text="Nume" />
+            <TableColumn fx:id="prenumeCol" prefWidth="112.0" text="Prenume" />
+            <TableColumn fx:id="emailCol" prefWidth="132.79998779296875" text="Email" />
+            <TableColumn fx:id="dataCol" prefWidth="104.79999389648435" text="Data Nasterii" />
+        </columns>
+    </TableView>
+      <MenuBar layoutY="2.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#onClose" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+</children>
+</AnchorPane>
